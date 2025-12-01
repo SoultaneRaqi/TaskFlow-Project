@@ -43,7 +43,6 @@ pipeline {
                 sh 'docker-compose up -d --build'
             }
         }
-        // ... (après le stage Build & Deploy Staging) ...
 
         stage('Promote to Production') {
             when { expression { return env.BRANCH_NAME ==~ 'release/.*' } } // Se lance seulement si le nom de la branche est 'release/...'
