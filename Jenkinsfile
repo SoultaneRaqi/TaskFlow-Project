@@ -43,5 +43,15 @@ pipeline {
                 sh 'docker-compose up -d --build'
             }
         }
+        // ... (après le stage Build & Deploy Staging) ...
+
+        stage('Promote to Production') {
+            when { expression { return env.BRANCH_NAME ==~ 'release/.*' } } // Se lance seulement si le nom de la branche est 'release/...'
+            steps {
+                echo "Déploiement de la version ${env.TAG_NAME} en production..."
+                // Dans un cas réel: sh 'ssh user@prod_server "docker-compose -f docker-compose.prod.yml pull && up -d"'
+                sh 'echo "Simulated production deployment complete."'
+            }
+        }
     }
 }
