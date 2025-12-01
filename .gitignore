@@ -1,0 +1,38 @@
+# --- SYSTEM & IDE ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# --- DOCKER ---
+jenkins_home/
+db_data/
+
+# --- BACKEND (Laravel) ---
+backend/vendor/
+backend/node_modules/
+backend/public/hot
+backend/public/storage
+backend/storage/*.key
+backend/storage/app/public
+backend/storage/framework/cache/data/*
+backend/storage/framework/sessions/*
+backend/storage/framework/testing/*
+backend/storage/framework/views/*
+backend/storage/logs/*
+backend/.env
+backend/.env.backup
+backend/.phpunit.result.cache
+
+# --- FRONTEND (React) ---
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+EOF
